@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A1 Law House – Advocate in Amaravati</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background-color: #fafaf8;
+      color: #1e2b2f;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* header / navigation */
+    .header {
+      background-color: #2c3e4e;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 5px solid #b4945a;
+    }
+
+    .logo-area h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .logo-area p {
+      font-size: 0.95rem;
+      color: #cfddee;
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #f0f3f5;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #b4945a;
+      color: #ffffff;
+    }
+
+    /* main container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      flex: 1;
+    }
+
+    /* sections / cards */
+    .section-card {
+      background-color: white;
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 20, 10, 0.04);
+      border: 1px solid #eae8e0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 400;
+      border-left: 6px solid #b4945a;
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #1f3a45;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.2rem;
+      background: #f6f7f5;
+      padding: 1rem 1.5rem;
+      border-radius: 60px;
+      border: 1px solid #dad6cb;
+    }
+
+    .info-item i {
+      font-size: 1.8rem;
+      color: #2c3e4e;
+      width: 2rem;
+      text-align: center;
+    }
+
+    .info-item a {
+      color: #1e2b2f;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .info-item a:hover {
+      color: #b4945a;
+      text-decoration: underline;
+    }
+
+    .map-placeholder {
+      background: #e1e7e9;
+      border-radius: 36px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      font-size: 1.2rem;
+      border: 1px dashed #7f8c8d;
+      margin-top: 1.8rem;
+    }
+
+    .map-placeholder i {
+      color: #b4945a;
+      margin-right: 8px;
+    }
+
+    .footer {
+      background-color: #1f2e38;
+      color: #d0dee8;
+      padding: 2rem 2rem 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #cfdee9;
+      text-decoration: none;
+      border-bottom: 1px dotted transparent;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #b4945a;
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #96aab6;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #3a4e5a;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    /* privacy / terms pages styling (same cards) */
+    .legal-text {
+      font-size: 1.05rem;
+      color: #2c3e4f;
+    }
+
+    .legal-text p {
+      margin: 1.2rem 0;
+    }
+
+    .legal-text ul {
+      margin: 1rem 0 1rem 2rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      max-width: 600px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #1f3a45;
+    }
+
+    .form-group input, .form-group textarea {
+      padding: 0.8rem 1rem;
+      border: 1px solid #c9c5b9;
+      border-radius: 40px;
+      font-size: 1rem;
+      background: #ffffff;
+    }
+
+    .form-group textarea {
+      border-radius: 28px;
+      resize: vertical;
+    }
+
+    .btn {
+      background-color: #2c3e4e;
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 48px;
+      width: fit-content;
+      cursor: pointer;
+      transition: 0.15s;
+      border: 1px solid #2c3e4e;
+    }
+
+    .btn:hover {
+      background-color: #b4945a;
+      border-color: #b4945a;
+      color: #0f1f29;
+    }
+
+    /* anchor fixes */
+    .page-id {
+      scroll-margin-top: 30px;
+    }
+
+    /* responsive */
+    @media (max-width: 650px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-area">
+      <h1><i class="fas fa-gavel" style="color:#b4945a; margin-right: 8px;"></i>A1 LAW HOUSE</h1>
+      <p>Advocates & Legal Consultants | Amaravati, A.P.</p>
+    </div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- ===== HOME SECTION (with all main details + copyright note) ===== -->
+    <section id="home" class="section-card page-id">
+      <h2 class="section-title"><i class="fas fa-balance-scale" style="margin-right: 10px; color:#b4945a;"></i> A1 Law House – Amaravati</h2>
+      <div class="contact-grid">
+        <!-- phone -->
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <div style="font-size: 0.9rem; color: #5e6f7a;">CALL US</div>
+            <a href="tel:9581555111">9581555111</a>
+          </div>
+        </div>
+        <!-- email -->
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <div style="font-size: 0.9rem; color: #5e6f7a;">EMAIL</div>
+            <a href="mailto:a1lawhouse@gmail.co">a1lawhouse@gmail.co</a>
+          </div>
+        </div>
+        <!-- address area (Guntur district) -->
+        <div class="info-item">
+          <i class="fas fa-map-pin"></i>
+          <div>
+            <div style="font-size: 0.9rem; color: #5e6f7a;">OFFICE</div>
+            <span>Amaravati, Guntur district, Andhra Pradesh 522020</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- static map / location mention (copyright already implied) -->
+      <div class="map-placeholder">
+        <i class="fas fa-map-marked-alt fa-2x" style="margin-right: 8px;"></i> 
+        <span style="font-weight:500;">🏛️ High Court of Andhra Pradesh, Amaravati – 2.5 km · 522020</span><br>
+        <span style="display: inline-block; margin-top: 10px; background: #2c3e4e; color: white; padding: 0.4rem 1.8rem; border-radius: 40px;"><i class="far fa-copyright"></i> A1 Law House — firm since 2005</span>
+      </div>
+
+      <!-- small intro / legacy with copyright style -->
+      <div style="margin-top: 2rem; background: #f1efe9; border-radius: 48px; padding: 1rem 1.8rem; font-size: 1rem;">
+        <i class="fas fa-star" style="color:#b4945a;"></i>  Trusted legal service in Guntur district. Advice with integrity. 
+        <span style="display: block; margin-top: 8px; color: #435e6b;"><i class="far fa-registered" style="font-size: 0.8rem;"></i> All rights reserved – A1 Law House, Amaravati.</span>
+      </div>
+    </section>
+
+    <!-- ===== PRIVACY POLICY SECTION ===== -->
+    <section id="privacy" class="section-card page-id">
+      <h2 class="section-title"><i class="fas fa-lock" style="margin-right: 12px;"></i>Privacy policy</h2>
+      <div class="legal-text">
+        <p><strong>Effective date:</strong> 1st January 2025</p>
+        <p>At A1 Law House, we value your privacy. This policy describes how we handle your information when you visit us or contact us.</p>
+        <ul>
+          <li><i class="fas fa-check-circle" style="color:#2c3e4e; width: 1.5rem;"></i> <strong>Data collection:</strong> We only collect name, phone, email, and case details you provide voluntarily.</li>
+          <li><i class="fas fa-check-circle" style="color:#2c3e4e;"></i> <strong>Use of information:</strong> To communicate, schedule appointments, and provide legal counsel.</li>
+          <li><i class="fas fa-check-circle" style="color:#2c3e4e;"></i> <strong>No sharing:</strong> We never sell or rent your personal data to third parties.</li>
+          <li><i class="fas fa-check-circle" style="color:#2c3e4e;"></i> <strong>Security:</strong> Reasonable measures are taken to protect your data.</li>
+        </ul>
+        <p>For any privacy concerns, contact us at <strong>a1lawhouse@gmail.co</strong> or call 9581555111.</p>
+        <p style="border-top: 1px solid #ddd; padding-top: 1rem;"><i class="far fa-copyright"></i> This privacy policy is part of A1 Law House website.</p>
+      </div>
+    </section>
+
+    <!-- ===== TERMS AND CONDITIONS ===== -->
+    <section id="terms" class="section-card page-id">
+      <h2 class="section-title"><i class="fas fa-file-contract"></i> Terms & conditions</h2>
+      <div class="legal-text">
+        <p>By accessing the A1 Law House website, you agree to these terms:</p>
+        <ul>
+          <li><strong>No attorney-client relationship</strong> – browsing or contacting us does not create a formal retainer. Representation only after signed agreement.</li>
+          <li><strong>Information purpose</strong> – content on this site is for general information and does not constitute legal advice.</li>
+          <li><strong>Limitation of liability</strong> – A1 Law House shall not be liable for any reliance on information without professional consultation.</li>
+          <li><strong>Governing law</strong> – disputes subject to jurisdiction of courts in Guntur district, Andhra Pradesh.</li>
+        </ul>
+        <p>We reserve the right to modify these terms. Last updated: March 2026.</p>
+        <p style="margin-top: 1.5rem;"><i class="fas fa-scale-balanced"></i> <strong>A1 Law House</strong> – Amaravati, Guntur district, 522020.</p>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT PAGE (with contact form & details) ===== -->
+    <section id="contact" class="section-card page-id">
+      <h2 class="section-title"><i class="fas fa-address-card"></i> Contact / office</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+        <!-- left side: direct info -->
+        <div>
+          <p style="font-size: 1.2rem; margin-bottom: 1rem;"><i class="fas fa-hand-point-right" style="color:#b4945a;"></i> Reach us directly:</p>
+          <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+            <div><i class="fas fa-phone" style="width: 2rem;"></i> <strong>9581555111</strong> (also WhatsApp)</div>
+            <div><i class="fas fa-envelope-open-text"></i> <strong>a1lawhouse@gmail.co</strong></div>
+            <div><i class="fas fa-building"></i> <strong>Address:</strong> 4-56, Lawyers' Chambers, near High Court, Amaravati, Guntur district, AP – 522020</div>
+            <div><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon–Sat 9:30 AM to 7:00 PM</div>
+          </div>
+          <div style="margin-top: 2rem; background: #eef0eb; border-radius: 20px; padding: 1.2rem;">
+            <i class="fas fa-map-signs"></i> Landmark: Opposite Andhra Pradesh Secretariat.
+          </div>
+        </div>
+
+        <!-- right side: quick contact form -->
+        <div>
+          <form class="contact-form" action="#" method="post">
+            <h3 style="font-weight: 400; border-bottom: 2px solid #b4945a; padding-bottom: 0.5rem;">Send a brief message</h3>
+            <div class="form-group">
+              <label><i class="far fa-user"></i> Name</label>
+              <input type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label><i class="far fa-envelope"></i> Email / phone</label>
+              <input type="text" placeholder="a1lawhouse@gmail.co or 9581555111" required>
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-pen"></i> Message</label>
+              <textarea rows="3" placeholder="Brief legal query..."></textarea>
+            </div>
+            <button class="btn" type="submit"><i class="fas fa-paper-plane"></i> Send (simulated)</button>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem;">This is a demo contact; for actual query please call.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER with all links, copyright and address ===== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <i class="fas fa-gavel" style="font-size: 2rem; color: #b4945a;"></i>
+        <span style="font-size: 1.5rem;">A1 LAW HOUSE</span>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <i class="fas fa-phone"></i> 9581555111 <span style="margin: 0 10px">|</span> 
+        <i class="fas fa-envelope"></i> a1lawhouse@gmail.co
+      </div>
+    </div>
+
+    <!-- detailed address & copyright row -->
+    <hr>
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding: 0 0.5rem;">
+      <span><i class="fas fa-map-marker-alt" style="color:#b4945a;"></i> Amaravati, Guntur district, Andhra Pradesh 522020</span>
+      <span><i class="far fa-copyright"></i> 2026 A1 Law House. All rights reserved.</span>
+    </div>
+    <div class="copyright">
+      <small>© A1 Law House – Established 2005. The content of this website is for informational purposes only.</small>
+    </div>
+  </footer>
+
+  <!-- optional smooth scroll for better UX -->
+  <script>
+    (function() {
+      // just for anchor smoothness
+      document.querySelectorAll('.nav-links a, .footer-links a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
